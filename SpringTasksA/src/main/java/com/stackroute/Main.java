@@ -13,15 +13,23 @@ public class Main {
     {
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
         Movie movie=context.getBean("movie",Movie.class);
-        System.out.println("Name of the actor "+movie.getActor().getName());
-        System.out.println("Gender is "+movie.getActor().getGender());
-        System.out.println("Age is "+ movie.getActor().getAge());
+        System.out.println("Name of the actor "+movie.getActor1().getName());
+        System.out.println("Gender is "+movie.getActor1().getGender());
+        System.out.println("Age is "+ movie.getActor1().getAge());
 
-        Movie movieA=context.getBean("movie",Movie.class);
-        System.out.println(movieA==movie);
+        System.out.println("Name of the actor "+movie.getActor2().getName());
+        System.out.println("Gender is "+movie.getActor2().getGender());
+        System.out.println("Age is "+ movie.getActor2().getAge());
 
-        Movie movieB=context.getBean("movieB",Movie.class);
-        Movie movieC=context.getBean("movieB",Movie.class);
-        System.out.println(movieC==movieB);
+        System.out.println("Name of the actor "+movie.getActor3().getName());
+        System.out.println("Gender is "+movie.getActor3().getGender());
+        System.out.println("Age is "+ movie.getActor3().getAge());
+
+        Movie movie1=context.getBean("movie",Movie.class);
+        System.out.println(movie1==movie);
+
+        Movie movie2=context.getBean("movieA",Movie.class);
+        Movie movie3=context.getBean("movieB",Movie.class);
+        System.out.println(movie2==movie3);
     }
 }
